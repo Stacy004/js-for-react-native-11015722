@@ -10,3 +10,21 @@ function processArray(arr) {
     return result;
 }
 
+function formatArrayStrings(stringsArray, numbersArray) {
+    if (stringsArray.length !== numbersArray.length) {
+        throw new Error("Input arrays must be of equal length.");
+    }
+
+    let formattedArray = [];
+    for (let i = 0; i < stringsArray.length; i++) {
+        let string = stringsArray[i];
+        let number = numbersArray[i];
+        if (number % 2 === 0) {
+            formattedArray.push(string.toUpperCase());
+        } else {
+            formattedArray.push(string.toLowerCase());
+        }
+    }
+    return formattedArray;
+}
+
